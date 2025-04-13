@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nexus - Innovator's Hub</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: linear-gradient(135deg, #1e1e2f, #12121c);
+      color: #f4f4f4;
+      padding: 2rem;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .navbar a {
+      color: #f4f4f4;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      text-align: center;
+      margin: 4rem 0;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: #6ef3c5;
+    }
+
+    .hero p {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+
+    .laptop-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 3rem;
+    }
+
+    .laptop {
+      width: 500px;
+      height: 300px;
+      border: 12px solid #444;
+      border-radius: 15px;
+      background: #1e1e2f;
+      box-shadow: 0 0 15px rgba(0,0,0,0.6);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .laptop-screen {
+      width: 100%;
+      height: 100%;
+      padding: 1rem;
+      overflow-y: auto;
+      color: #6ef3c5;
+    }
+
+    .features, .faq, .footer {
+      margin: 4rem 0;
+    }
+
+    .features h2, .faq h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .features ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      list-style: none;
+    }
+
+    .features li {
+      background: #2c2c3e;
+      padding: 1rem;
+      margin: 1rem;
+      border-radius: 10px;
+      width: 200px;
+      text-align: center;
+    }
+
+    .faq-item {
+      margin: 1rem 0;
+      background: #2c2c3e;
+      padding: 1rem;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .faq-answer {
+      display: none;
+      color: #aaa;
+      margin-top: 0.5rem;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 1rem;
+      border-top: 1px solid #333;
+      font-size: 0.9rem;
+      color: #999;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 0.5rem;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      background-color: #6ef3c5;
+      color: #000;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .laptop {
+        width: 90%;
+        height: 250px;
+      }
+
+      .features ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .features li {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo"><i class="fa-solid fa-code"></i> Nexus</div>
+    <div>
+      <a href="#features">Roadmaps</a>
+      <a href="#faq">FAQ</a>
+      <a href="#idea">Submit Idea</a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>Welcome to Nexus</h1>
+    <p>Your Launchpad for Coding, Collaboration & Innovation</p>
+  </div>
+
+  <!-- Laptop with Form -->
+  <div class="laptop-container" id="idea">
+    <div class="laptop">
+      <div class="laptop-screen" id="terminal">
+        <!-- Form will be injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <section id="features" class="features">
+    <h2>🚀 Features</h2>
+    <ul>
+      <li>📚 Roadmaps</li>
+      <li>🧠 AI Time Planner</li>
+      <li>💬 Chatbot</li>
+      <li>🛠️ Project Levels</li>
+      <li>🎯 Hackathons</li>
+      <li>🤝 Freelancing</li>
+    </ul>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="faq">
+    <h2>❓ Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-question">What is Nexus?</div>
+      <div class="faq-answer">Nexus is a hub for coders to grow, build, and launch ideas.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Can I participate in hackathons?</div>
+      <div class="faq-answer">Yes! We organize regular hackathons open to all users.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Is this platform free?</div>
+      <div class="faq-answer">Absolutely. Nexus is built to empower everyone.</div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div class="footer">
+    &copy; 2025 Nexus Platform | Built by Shashank Kumar 🚀
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Inject form into laptop
+      const terminal = document.getElementById('terminal');
+      terminal.innerHTML = `
+        <h2 style="margin-bottom:1rem;">Share Your Idea</h2>
+        <form id="ideaForm">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <input type="text" name="title" placeholder="Project Title" required />
+          <textarea name="description" placeholder="Describe your idea..." required></textarea>
+          <button type="submit" class="btn">Submit Idea</button>
+        </form>
+      `;
+
+      // Handle form submission
+      const form = document.getElementById('ideaForm');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        alert("Thank you for submitting your idea!");
+        form.reset();
+      });
+
+      // FAQ toggle
+      const faqs = document.querySelectorAll(".faq-item");
+      faqs.forEach(item => {
+        item.addEventListener("click", () => {
+          const answer = item.querySelector(".faq-answer");
+          answer.style.display = answer.style.display === "block" ? "none" : "block";
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

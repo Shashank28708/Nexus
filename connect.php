@@ -1,19 +1,25 @@
 <?php
- $name = $_post['name'];
- $email = $_post['email'];
- $title = $_post['title'];
- $description = $_post['description'];
+$name = $_POST['name'];
+$email = $_POST['email'];
+$title = $_POST['title'];
+$description = $_POST['description'];
 
- //data base connection
- $com = new mysqli('localhost','root','','test');
- if($conn->connct_error){
-    die('Connection Failed : '.$conn->connect_error);
- }else{
-    $stmt - $conn->prepare("isert into registration(name, email, title, description)
-    values(?, ?, ?, ?)");
-    $stmt->bind_param("ssss",$name, $email, $title, $description);
-    echo "registration Successfully....";
+// Database connection
+$conn = new mysqli('localhost', 'root', '', 'test');
+
+if ($conn->connect_error) {
+    die('Connection Failed: ' . $conn->connect_error);
+} else {
+    $stmt = $conn->prepare("INSERT INTO registration (name, email, title, description) VALUES (?, ?, ?, ?)");
+    $stmt->bind_param("ssss", $name, $email, $title, $description);
+    
+    if ($stmt->execute()) {
+        echo "Registration successful!";
+    } else {
+        echo "Error: " . $stmt->error;
+    }
+
     $stmt->close();
     $conn->close();
- }
- ?>
+}
+?>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Learn to Code | Nexus</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #111827;
+      color: #f9fafb;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: #111827;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .navbar-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #10b981;
+    }
+
+    .hamburger {
+  display: none;
+  font-size: 1.8rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 999;
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+}
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    margin-top: 3rem;
+    background-color: #1f2937;
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+}
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 60px 20px 40px;
+      background: #000745;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #f3f4f6;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #9ca3af;
+    }
+
+    /* Tracks */
+    .tracks {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 40px 20px;
+    }
+
+    @media (min-width: 768px) {
+      .tracks {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .tracks {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .track-card {
+      background: #1f2937;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    .track-card h2 {
+      color: #e5e7eb;
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    .track-card p {
+      color: #9ca3af;
+      margin-bottom: 16px;
+    }
+
+    .track-button {
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      padding: 10px 30px;
+      border-radius: 6px;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+
+    .track-button:hover {
+      background: #1e40af;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #111827;
+      color: white;
+      padding: 2rem 1rem;
+      border-top: 1px solid #374151;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .footer-section {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer-section h3, .footer-section h4 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-section p, .footer-section a {
+      color: #d1d5db;
+      font-size: 0.95rem;
+    }
+
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-section ul li a:hover {
+      color: #10b981;
+    }
+
+    .social-icons a {
+      margin-right: 0.75rem;
+      font-size: 1.2rem;
+      color: white;
+    }
+
+    .social-icons a:hover {
+      color: #10b981;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 1.5rem;
+      border-top: 1px solid #374151;
+      padding-top: 1rem;
+      font-size: 0.875rem;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="navbar-container">
+      <div class="logo">Nexus</div>
+      <nav class="nav-links" id="navLinks">
+        <a href="#">Home</a>
+        <a href="#">Roadmaps</a>
+        <a href="#">Projects</a>
+        <a href="#">Hackathons</a>
+        <a href="#">Freelancing</a>
+        <a href="#">Contact</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">☰</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Learn to Code from Scratch</h1>
+    <p>Build real-world projects and become job-ready</p>
+  </section>
+
+  <section class="tracks">
+    <div class="track-card">
+      <h2>Frontend</h2>
+      <p>HTML, CSS, JavaScript</p>
+      <a href="frontend.html" class="track-button">Start learning</a>
+    </div>
+    <div class="track-card">
+      <h2>Backend</h2>
+      <p>Python, Java, PHP</p>
+      <a href="#" class="track-button">Start learning</a>
+    </div>
+    <div class="track-card">
+      <h2>Framework</h2>
+      <p>Flutter and React Native projects</p>
+      <a href="#" class="track-button">Start learning</a>
+    </div>
+    <div class="track-card">
+      <h2>Database</h2>
+      <p>SQL, MongoDB</p>
+      <a href="#" class="track-button">Start learning</a>
+    </div>
+    <div class="track-card">
+      <h2>UI/UX</h2>
+      <p>Design principles, tools & wireframing</p>
+      <a href="#" class="track-button">Start learning</a>
+    </div>
+    <div class="track-card">
+      <h2>C/C++</h2>
+      <p>Basics to Advanced with Projects</p>
+      <a href="#" class="track-button">Start learning</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Nexus</h3>
+        <p>Empowering developers with tools, roadmaps, and community support.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Roadmaps</a></li>
+          <li><a href="#">Hackathons</a></li>
+          <li><a href="#">Freelancing</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section social-icons">
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-discord"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 Nexus. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+      hamburger.textContent = navLinks.classList.contains('show') ? '✕' : '☰';
+      hamburger.setAttribute('aria-label', navLinks.classList.contains('show') ? 'Close navigation' : 'Open navigation');
+    });
+  </script>
+</body>
+</html>

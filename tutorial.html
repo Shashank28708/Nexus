@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Frontend Tutorial</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #111827;
+      color: #f1f5f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    .section {
+      padding: 2rem 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #e0f2fe;
+      font-size: 28px;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .day-block {
+      display: flex;
+      flex-direction: column;
+      background-color: #1f2937;
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border-left: 4px solid #3b82f6;
+      gap: 1rem;
+    }
+
+    .day-number {
+      background-color: #3b82f6;
+      color: white;
+      font-weight: bold;
+      padding: 8px 16px;
+      border-radius: 20px;
+      width: fit-content;
+      font-size: 14px;
+    }
+
+    .day-content h3 {
+      margin: 0;
+      color: #e0f2fe;
+      font-size: 20px;
+    }
+
+    .day-content p,
+    .day-content ul {
+      color: #d1d5db;
+      margin: 0.5rem 0;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #60a5fa;
+    }
+
+    @media (min-width: 640px) {
+      .day-block {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+
+      .day-number {
+        min-width: 80px;
+        text-align: center;
+        align-self: center;
+      }
+
+      .day-content {
+        flex: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="section">
+    <h2>Frontend Kickstart Tutorials</h2>
+
+    <div class="day-block">
+      <div class="day-number">HTML</div>
+      <div class="day-content">
+        <h3>HTML Basics</h3>
+        <ul>
+          <li>What is HTML?</li>
+          <li>Common Tags (headings, links, images)</li>
+          <li>Forms, Tables, Semantic HTML</li>
+        </ul>
+        <p>📚 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">MDN HTML Guide</a></p>
+      </div>
+    </div>
+
+    <div class="day-block">
+      <div class="day-number">CSS</div>
+      <div class="day-content">
+        <h3>CSS Styling</h3>
+        <ul>
+          <li>Selectors, Colors, Fonts</li>
+          <li>Box Model & Positioning</li>
+          <li>Flexbox & Grid</li>
+        </ul>
+        <p>🎨 <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">Flexbox Guide</a></p>
+      </div>
+    </div>
+
+    <div class="day-block">
+      <div class="day-number">JS</div>
+      <div class="day-content">
+        <h3>JavaScript Basics</h3>
+        <ul>
+          <li>Variables, Loops, Functions</li>
+          <li>DOM Manipulation</li>
+          <li>Events and Interactivity</li>
+        </ul>
+        <p>📘 <a href="https://javascript.info" target="_blank">JavaScript.info</a></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

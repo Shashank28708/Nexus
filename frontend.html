@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Day Wise Itinerary</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #111827;
+      color: #f1f5f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      gap: 0.5rem;
+      padding: 1rem;
+      background-color: #1f2937;
+      border-bottom: 1px solid #374151;
+    }
+
+    .tab {
+      padding: 10px 16px;
+      border: none;
+      border-radius: 30px;
+      background-color: #374151;
+      color: #cbd5e1;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background 0.3s ease, color 0.3s ease;
+      font-size: 14px;
+    }
+
+    .tab:hover {
+      background-color: #4b5563;
+    }
+
+    .tab.active {
+      background-color: #3b82f6;
+      color: white;
+    }
+
+    .itinerary-section {
+      padding: 1rem;
+    }
+
+    h2 {
+      color: #e0f2fe;
+      font-size: 24px;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .day-block {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 1.5rem;
+      background-color: #1f2937;
+      border-radius: 16px;
+      padding: 1rem;
+      gap: 1rem;
+      align-items: flex-start;
+      border-left: 4px solid #3b82f6;
+    }
+
+    .day-number {
+      background-color: #3b82f6;
+      color: white;
+      font-weight: bold;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      font-size: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .day-content {
+      color: #e5e7eb;
+      flex: 1;
+    }
+
+    .day-content p {
+      margin: 0.5rem 0;
+      line-height: 1.6;
+      color: #d1d5db;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .tabs {
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 0.5rem;
+      }
+
+      .tab {
+        font-size: 13px;
+        padding: 8px 12px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      .day-block {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1rem;
+      }
+
+      .day-number {
+        width: 50px;
+        height: 50px;
+        font-size: 12px;
+        margin-bottom: 0.5rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="tabs">
+    <button class="tab active">Overview</button>
+    <a href="tutorial.html"><button class="tab">Tutorial</button></a>
+  </div>
+
+  <div class="itinerary-section">
+    <h2>Day Wise Roadmap</h2>
+
+    <div class="day-block">
+      <div class="day-number">Overview</div>
+      <div class="day-content">
+        <h3>Frontend Learning Overview</h3>
+        <p>Learning frontend development typically takes <strong>2 to 3 months</strong> of consistent practice if you dedicate around 1–2 hours daily.</p>
+        <p>This roadmap is designed for <strong>5 days of kickstart learning</strong> — giving you a quick start to HTML, CSS, and JavaScript. After this, continue building projects, explore frameworks (like React), and keep practicing.</p>
+        <p>Remember: real learning comes from building!</p>
+      </div>
+    </div>
+
+    <div class="day-block">
+      <div class="day-number">Day 1</div>
+      <div class="day-content">
+        <h3>Day 1</h3>
+        <p><strong>WHAT IS FRONTEND?</strong></p>
+        <p>Frontend development is about building what users see — buttons, layouts, animations, forms — everything on the visual side of the web.</p>
+      </div>
+    </div>
+
+    <div class="day-block">
+      <div class="day-number">Week 2</div>
+      <div class="day-content">
+        <h3>Week 2</h3>
+        <p><strong>HTML (HyperText Markup Language)</strong></p>
+        <p>Structure of webpages. Learn: tags, forms, semantic elements, tables, etc.</p>
+      </div>
+    </div>
+
+    <div class="day-block">
+      <div class="day-number">Week 3</div>
+      <div class="day-content">
+        <h3>Week 3</h3>
+        <p><strong>CSS (Cascading Style Sheets)</strong></p>
+        <p>Styling the layout and design. Learn: Flexbox, Grid, animations, responsive design.</p>
+      </div>
+    </div>
+
+    <div class="day-block">
+      <div class="day-number">Week 4</div>
+      <div class="day-content">
+        <h3>Week 4</h3>
+        <p><strong>JavaScript</strong></p>
+        <p>Interactive behavior. Learn: DOM manipulation, events, loops, arrays, functions.</p>
+      </div>
+    </div>
+
+    <div class="day-block">
+      <div class="day-number">Week 7</div>
+      <div class="day-content">
+        <h3>Week 7</h3>
+        <p><strong>Projects</strong></p>
+        <p>Build simple projects using HTML, CSS, and JavaScript — like a portfolio, calculator, or to-do app.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  
+  </script>
+</body>
+</html>

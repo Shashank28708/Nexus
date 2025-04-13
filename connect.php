@@ -9,9 +9,9 @@
  if($conn->connct_error){
     die('Connection Failed : '.$conn->connect_error);
  }else{
-    $stmt - $conn->prepare("isert into ideas(name, email, title, description)
+    $stmt - $conn->prepare("isert into registration(name, email, title, description)
     values(?, ?, ?, ?)");
-    $stmt->bind_param("ssss",$name, $email,$title,$description);
+    $stmt->bind_param("ssss",$name, $email, $title, $description);
     echo "registration Successfully....";
     $stmt->close();
     $conn->close();

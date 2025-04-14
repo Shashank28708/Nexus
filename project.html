@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexus | Projects</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #0f172a;
+      color: #f1f5f9;
+    }
+
+    header {
+      background-color: #1e293b;
+      color: #f8fafc;
+      padding: 1rem;
+      text-align: center;
+      border-bottom: 2px solid #334155;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    .project {
+      background-color: #1e293b;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      transition: transform 0.2s;
+      cursor: pointer;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+    }
+
+    .project h2 {
+      color: #38bdf8;
+    }
+
+    .project p {
+      color: #cbd5e1;
+    }
+
+    .tags {
+      margin-top: 0.5rem;
+    }
+
+    .tag {
+      display: inline-block;
+      background-color: #334155;
+      color: #f1f5f9;
+      border-radius: 15px;
+      padding: 0.3rem 0.8rem;
+      margin-right: 0.5rem;
+      font-size: 0.85rem;
+    }
+
+    .details {
+      display: none;
+      margin-top: 1rem;
+      border-top: 1px solid #334155;
+      padding-top: 1rem;
+      color: #94a3b8;
+    }
+    .navbar {
+      background-color: #111827;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .navbar-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #10b981;
+    }
+
+    .hamburger {
+  display: none;
+  font-size: 1.8rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 999;
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+}
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    margin-top: 3rem;
+    background-color: #1f2937;
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+}
+/* Footer */
+.footer {
+      background-color: #111827;
+      color: white;
+      padding: 2rem 1rem;
+      border-top: 1px solid #374151;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .footer-section {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer-section h3, .footer-section h4 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-section p, .footer-section a {
+      color: #d1d5db;
+      font-size: 0.95rem;
+    }
+
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-section ul li a:hover {
+      color: #10b981;
+    }
+
+    .social-icons a {
+      margin-right: 0.75rem;
+      font-size: 1.2rem;
+      color: white;
+    }
+
+    .social-icons a:hover {
+      color: #10b981;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 1.5rem;
+      border-top: 1px solid #374151;
+      padding-top: 1rem;
+      font-size: 0.875rem;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="navbar-container">
+          <div class="logo">Nexus</div>
+          <nav class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="roadmaps.html">Roadmaps</a>
+            <a href="project.html">Projects</a>
+            <a href="hackathon.html">Hackathons</a>
+            <a href="#">Freelancing</a>
+            <a href="#">Contact</a>
+          </nav>
+          <button class="hamburger" id="hamburger" aria-label="Toggle navigation">☰</button>
+        </div>
+      </header>
+  <header>
+    <h1>🛠 Nexus Projects</h1>
+    <p>Practice and build your skills with real-world projects</p>
+  </header>
+
+  <div class="container" id="projects-container">
+    <!-- Project cards will be injected here -->
+  </div>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Nexus</h3>
+        <p>Empowering developers with tools, roadmaps, and community support.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Roadmaps</a></li>
+          <li><a href="#">Hackathons</a></li>
+          <li><a href="#">Freelancing</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section social-icons">
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-discord"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 Nexus. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    function toggleDetails(projectElement) {
+      const details = projectElement.querySelector('.details');
+      details.style.display = details.style.display === 'block' ? 'none' : 'block';
+    }
+
+    const projects = [
+      {
+        title: "Recipe Finder",
+        skills: "API Integration, JavaScript, UI Design",
+        level: "Intermediate",
+        type: "Frontend",
+        description: "Use a recipe API to let users search recipes based on ingredients. Features include filtering by dietary needs, saving favorite recipes, and more."
+      },
+      {
+        title: "Notes App",
+        skills: "JavaScript, Local Storage / Firebase",
+        level: "Beginner",
+        type: "Frontend",
+        description: "Create a dynamic notes app with editing, deleting, and syncing. Add markdown support, color tags, and persistent storage using Firebase."
+      },
+      {
+        title: "File Sharing App",
+        skills: "Node.js, Express, Cloud Storage",
+        level: "Advanced",
+        type: "Backend",
+        description: "Let users upload files and generate links for sharing. Include file expiration, download limits, and security controls."
+      },
+      {
+        title: "To-Do List with Authentication",
+        skills: "React, Firebase, CRUD",
+        level: "Beginner",
+        type: "Full Stack",
+        description: "Allow users to sign in and manage personal to-do lists with status and priority tracking."
+      },
+      {
+        title: "Weather Dashboard",
+        skills: "API, JavaScript, Bootstrap",
+        level: "Intermediate",
+        type: "Frontend",
+        description: "Fetch live weather data and display forecasts for any city, using weather APIs and a nice UI."
+      },
+      {
+        title: "Chat Application",
+        skills: "Socket.IO, Node.js, MongoDB",
+        level: "Advanced",
+        type: "Full Stack",
+        description: "Build a real-time chat platform with private and group conversations."
+      },
+      {
+        title: "E-Commerce Product Page",
+        skills: "HTML, CSS, JavaScript",
+        level: "Intermediate",
+        type: "Frontend",
+        description: "Design a product detail page with image sliders, cart functionality, and review section."
+      },
+      {
+        title: "Expense Tracker",
+        skills: "React, Charts.js",
+        level: "Intermediate",
+        type: "Frontend",
+        description: "Track personal expenses and visualize them with charts."
+      },
+      {
+        title: "Blog Platform",
+        skills: "Node.js, Express, MongoDB",
+        level: "Advanced",
+        type: "Full Stack",
+        description: "A blogging system where users can write, edit, and delete posts, with comments and likes."
+      },
+      {
+        title: "Portfolio Website",
+        skills: "HTML, CSS, JS, GitHub Pages",
+        level: "Beginner",
+        type: "Frontend",
+        description: "Showcase your projects, skills, and contact info in a sleek personal site."
+      },
+      {
+        title: "AI-Based Image Captioning",
+        skills: "Python, Deep Learning, Flask",
+        level: "Advanced",
+        type: "AI",
+        description: "Generate captions for uploaded images using CNN + LSTM models."
+      },
+      {
+        title: "Pothole Detection System",
+        skills: "Python, OpenCV, ML",
+        level: "Advanced",
+        type: "AI",
+        description: "Detect potholes in road images or video using computer vision techniques."
+      },
+      {
+        title: "Typing Speed Test",
+        skills: "JavaScript, Timer, DOM",
+        level: "Beginner",
+        type: "Frontend",
+        description: "Test and improve your typing speed with real-time WPM tracking."
+      },
+      {
+        title: "URL Shortener",
+        skills: "Node.js, Express, MongoDB",
+        level: "Intermediate",
+        type: "Backend",
+        description: "Create a service like Bit.ly where users can generate short links that redirect."
+      },
+      {
+        title: "Voice Assistant",
+        skills: "Python, Speech Recognition",
+        level: "Advanced",
+        type: "AI",
+        description: "Build an assistant that responds to voice commands and performs simple tasks."
+      },
+      {
+        title: "AI Chatbot",
+        skills: "Python, NLP, Flask",
+        level: "Advanced",
+        type: "AI",
+        description: "Create a chatbot using rule-based or ML/NLP techniques that can answer user queries."
+      },
+      {
+        title: "Smart Attendance System",
+        skills: "OpenCV, Face Recognition",
+        level: "Advanced",
+        type: "AI",
+        description: "Automate student attendance using face detection and recognition."
+      },
+      {
+        title: "Currency Converter",
+        skills: "JavaScript, API",
+        level: "Beginner",
+        type: "Frontend",
+        description: "Convert values between different currencies using a live exchange rate API."
+      },
+      {
+        title: "QR Code Generator",
+        skills: "JavaScript, Canvas API",
+        level: "Beginner",
+        type: "Frontend",
+        description: "Generate QR codes from text or URLs with download options."
+      },
+      {
+        title: "Virtual Drum Kit",
+        skills: "JavaScript, Audio API",
+        level: "Beginner",
+        type: "Frontend",
+        description: "Play virtual drum sounds on keypresses or button clicks using Web Audio."
+      }
+    ];
+
+    const container = document.getElementById("projects-container");
+    projects.forEach((project, index) => {
+      const div = document.createElement("div");
+      div.className = "project";
+      div.setAttribute("onclick", "toggleDetails(this)");
+      div.innerHTML = `
+        <h2>${index + 1}. ${project.title}</h2>
+        <p><strong>Key Skills:</strong> ${project.skills}</p>
+        <div class="tags">
+          <span class="tag">${project.level}</span>
+          <span class="tag">${project.type}</span>
+        </div>
+        <div class="details">
+          <p>${project.description}</p>
+        </div>
+      `;
+      container.appendChild(div);
+    });
+   
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+      hamburger.textContent = navLinks.classList.contains('show') ? '✕' : '☰';
+      hamburger.setAttribute('aria-label', navLinks.classList.contains('show') ? 'Close navigation' : 'Open navigation');
+    });
+ 
+  </script>
+</body>
+
+</html>

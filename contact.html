@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nexus | About & Contact</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #1f2937, #111827);
+      color: #fff;
+    }
+   /* Navbar */
+   .navbar {
+      background-color: #111827;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .navbar-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #10b981;
+    }
+
+    .hamburger {
+  display: none;
+  font-size: 1.8rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 999;
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+}
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    margin-top: 3rem;
+    background-color: #1f2937;
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+}
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    h1, h2 {
+      color: #10b981;
+      font-weight: 700;
+    }
+
+    .section {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      margin-bottom: 3rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li::before {
+      content: "✨ ";
+      color: #10b981;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin: 0.5rem 0 1rem 0;
+      border: none;
+      border-radius: 0.5rem;
+      background: #374151;
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    form button {
+      padding: 0.8rem 2rem;
+      background-color: #10b981;
+      border: none;
+      border-radius: 0.5rem;
+      color: #111827;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    form button:hover {
+      background-color: #059669;
+    }
+
+    @media screen and (max-width: 600px) {
+      .container {
+        padding: 1rem;
+      }
+
+      .section {
+        padding: 1.5rem;
+      }
+    }
+    /* Footer */
+    .footer {
+      background-color: #111827;
+      color: white;
+      padding: 2rem 1rem;
+      border-top: 1px solid #374151;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .footer-section {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer-section h3, .footer-section h4 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-section p, .footer-section a {
+      color: #d1d5db;
+      font-size: 0.95rem;
+    }
+
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-section ul li a:hover {
+      color: #10b981;
+    }
+
+    .social-icons a {
+      margin-right: 0.75rem;
+      font-size: 1.2rem;
+      color: white;
+    }
+
+    .social-icons a:hover {
+      color: #10b981;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 1.5rem;
+      border-top: 1px solid #374151;
+      padding-top: 1rem;
+      font-size: 0.875rem;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-container">
+            <div class="logo">Nexus</div>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="roadmaps.html">Roadmaps</a>
+                <a href="project.html">Projects</a>
+                <a href="hackathon.html">Hackathons</a>
+                <a href="#">Freelancing</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">☰</button>
+        </div>
+    </header>
+  <div class="container">
+
+    <!-- About Us Section -->
+    <div class="section">
+      <h1>About Us</h1>
+      <p style="font-size: 1.1rem; line-height: 1.8;">
+        At <strong style="color: #10b981;">Nexus</strong>, we’re more than just a coding platform — we're the launchpad for future creators, innovators, and tech leaders. 🌍💡
+      </p>
+      <p style="margin-top: 1rem; font-size: 1.1rem;">
+        Born from the belief that <em>everyone</em> deserves the right tools to bring their ideas to life, Nexus is your all-in-one ecosystem:
+      </p>
+      <ul style="margin-top: 1.5rem; line-height: 1.8;">
+        <li>🧭 Curated <strong>Roadmaps</strong> that turn chaos into clarity.</li>
+        <li>🧠 An <strong>AI Time Planner</strong> that helps you code smart, not just hard.</li>
+        <li>🤖 A friendly <strong>Chatbot</strong> that’s more mentor than machine.</li>
+        <li>🎯 <strong>Level-Based Projects</strong> that challenge you, not confuse you.</li>
+        <li>🚀 <strong>Hackathons</strong> to build, battle, and brag.</li>
+        <li>💼 Real-world <strong>Freelance Gigs</strong> to earn while you learn.</li>
+        <li>🌱 Got an idea but don’t know where to start? We’ll <strong>help you build it</strong>.</li>
+      </ul>
+      <p style="margin-top: 2rem; font-size: 1.1rem;">
+        Whether you’re starting from scratch or scaling up your skills, Nexus is your digital playground, co-working space, and mentor — all in one tab. ⚡
+      </p>
+      <p style="margin-top: 1rem; font-style: italic; color: #9ca3af;">
+        Because your next big idea deserves more than just a TODO list — it deserves to be real.
+      </p>
+    </div>
+
+    <!-- Contact Us Section -->
+    <div class="section">
+      <h2>Contact Us</h2>
+      <form>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Tell us how we can help..." required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Nexus</h3>
+        <p>Empowering developers with tools, roadmaps, and community support.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Roadmaps</a></li>
+          <li><a href="#">Hackathons</a></li>
+          <li><a href="#">Freelancing</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section social-icons">
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-discord"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 Nexus. All rights reserved.
+    </div>
+  </footer>
+  <script>
+     // Hamburger Menu Toggle
+     const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+            hamburger.textContent = navLinks.classList.contains('show') ? '✕' : '☰';
+            hamburger.setAttribute('aria-label', navLinks.classList.contains('show') ? 'Close navigation' : 'Open navigation');
+        });
+         // Close menu when clicking a link
+         navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('show');
+                hamburger.textContent = '☰';
+                hamburger.setAttribute('aria-label', 'Open navigation');
+            });
+        });
+  </script>
+</body>
+</html>

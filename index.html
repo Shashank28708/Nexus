@@ -649,8 +649,9 @@
             </div>
             <div class="footer-section">
                 <h4>Stay Updated</h4>
-                <form class="subscribe-form">
-                    <input type="email" placeholder="Enter your email" required>
+                <form class="subscribe-form" action="https://sheetdb.io/api/v1/angzov9por2x7" method="post" id="sheetdb-form">
+                    <input name="data[name]" type="text" placeholder="Name" required>
+                    <input name="data[email]" type="email" placeholder="Enter your email" required>
                     <button type="submit">Subscribe</button>
                 </form>
                 <div class="social-icons">
@@ -752,6 +753,18 @@
 
         // Start the coding simulation after a short delay
         setTimeout(typeCode, 1000);
+
+
+        var form = document.getElementById('sheetdb-form');
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+      });
+        form.reset();
+    });
+
     </script>
 </body>
 
